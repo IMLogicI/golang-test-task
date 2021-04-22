@@ -52,17 +52,17 @@ func testCasesInit() (testCases []tests){
 		user1: "A123",
 		user2: "a123",
 		error: "nil",
-	},tests{
+	}, tests{
 		link:   "user1=A123&user2=a123&user3=sfe",
 		user1: "nil",
 		user2: "nil",
 		error: "The number of params not equal 2.",
-	},tests{
+	}, tests{
 		link:   "user3=A123&user1=a123",
 		user1: "nil",
 		user2: "nil",
 		error: "Can not parse param user1.",
-	},tests{
+	}, tests{
 		link:   "user1=A123&user3=a123",
 		user1: "nil",
 		user2: "nil",

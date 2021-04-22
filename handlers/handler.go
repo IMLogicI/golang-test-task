@@ -4,12 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"gRPC_test/uniqId"
 	"google.golang.org/grpc"
 	"log"
 	"net/http"
 	"net/url"
 	"strings"
+	"test-task/uniqId"
 )
 
 func UserIdHandler() http.HandlerFunc {
