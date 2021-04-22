@@ -5,37 +5,37 @@ import (
 	"testing"
 )
 
-type tests struct{
-	testUids UserIds
+type tests struct {
+	testUids   UserIds
 	resultUniq UniqId
 }
 
 func TestCreateUniqId(t *testing.T) {
-	testCases:=testCasesInit()
+	testCases := testCasesInit()
 	s := Server{}
 
-	for _, test:=range testCases{
-		uniqId, _ := s.CreateUniqId(context.Background(),&test.testUids)
-		if uniqId.Uid!=test.resultUniq.Uid{
+	for _, test := range testCases {
+		uniqId, _ := s.CreateUniqId(context.Background(), &test.testUids)
+		if uniqId.Uid != test.resultUniq.Uid {
 			t.Errorf("waiting %v, have: %v", test.resultUniq.Uid, uniqId.Uid)
 		}
 	}
 
 }
 
-func testCasesInit() (testCases []tests){
+func testCasesInit() (testCases []tests) {
 	testCases = append(testCases,
 		//simple case no specific
 		tests{
-		testUids:   UserIds{
-			User1: "e3wedaadq2s",
-			User2: "WEdfsdt5ed",
+			testUids: UserIds{
+				User1: "e3wedaadq2s",
+				User2: "WEdfsdt5ed",
+			},
+			resultUniq: UniqId{
+				Uid: "10s11WEdfsdt5ede3wedaadq2s",
+			},
 		},
-		resultUniq: UniqId{
-			Uid: "10s11WEdfsdt5ede3wedaadq2s",
-		},
-	},
-	//u1 and u2 swap values
+		//u1 and u2 swap values
 		tests{
 			testUids: UserIds{
 				User1: "WEdfsdt5ed",
