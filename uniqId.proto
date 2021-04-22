@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package uniqId;
+
+option go_package = "../uniqId";
+
+service UniqIdService {
+  rpc CreateUniqId(UserIds) returns (UniqId) {}
+}
+
+message UserIds {
+  string user1 = 1;
+  string user2 = 2;
+}
+
+message UniqId {
+  string uid = 1;
+}
