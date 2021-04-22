@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"gRPC_test/handlers"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
+	"test-task/handlers"
 	"time"
 )
 

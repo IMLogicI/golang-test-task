@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gRPC_test/uniqId"
 	"google.golang.org/grpc"
 	"log"
 	"net"
+	"test-task/uniqId"
 )
 
 func main() {
