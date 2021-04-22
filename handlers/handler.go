@@ -21,7 +21,7 @@ func UserIdHandler() http.HandlerFunc {
 		}
 
 		uIds, err := ProcessUIds(params)
-		if err!=nil{
+		if err != nil {
 			log.Println(err)
 			w.WriteHeader(http.StatusBadRequest)
 			return
@@ -40,7 +40,7 @@ func UserIdHandler() http.HandlerFunc {
 	}
 }
 
-func ProcessUIds (params map[string][]string) (uniqId.UserIds, error){
+func ProcessUIds(params map[string][]string) (uniqId.UserIds, error) {
 	if len(params) > 2 || len(params) < 2 {
 		return uniqId.UserIds{}, fmt.Errorf("The number of params not equal 2.")
 	}
@@ -59,7 +59,7 @@ func ProcessUIds (params map[string][]string) (uniqId.UserIds, error){
 
 	uIds.User2 = strings.Join(params["user2"], "")
 
-	return  uIds, nil
+	return uIds, nil
 }
 
 func gRPCClient(uIds uniqId.UserIds) (*uniqId.UniqId, error) {
